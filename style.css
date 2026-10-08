@@ -1,16 +1,51 @@
+/* Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+*:not(dialog) {
+    margin: 0;
+}
+
+
+
 .grid {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    width: calc(min(100vh, 100vw) * 0.8);
+    height: calc(min(100vh, 100vw) * 0.8);
+    border: 1px solid black;
 }
 
 .row {
     display: flex;
+    flex: 1;
+
+    margin: 0;
+    padding: 0;
 }
 
 .col {
-    height: 50px;
-    width: 50px;
+    width: 100%;
+    height: 100%;
     background-color: antiquewhite;
-    border: 1px solid gray;
+
+    margin: 0;
+    padding: 0;
+    flex: 1 1 auto;
+
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.row:last-child .col {
+    border-bottom: none;
+}
+
+.col:last-child {
+    border-right: none;
 }

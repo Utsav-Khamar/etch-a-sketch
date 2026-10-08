@@ -9,7 +9,7 @@ for (let row = 0; row < 16; row++) {
 
         let block = document.createElement('div');
         block.classList.add('col');
-        block.textContent = `${count}`;
+        // block.textContent = `${count}`;
         rows.appendChild(block)
     }
     grid.appendChild(rows);
