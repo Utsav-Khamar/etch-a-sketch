@@ -1,5 +1,11 @@
+.grid {
+    display: flex;
+    justify-content: center;
+}
+
 .row {
     display: flex;
+    flex-direction: column;
 }
 
 .col {
