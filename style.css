@@ -49,3 +49,7 @@
 .col:last-child {
     border-right: none;
 }
+
+/* .col:hover {
+    background-color: aqua;
+} */
