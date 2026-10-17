@@ -49,7 +49,7 @@
     border-radius: 50%;
 }
 
-.option-panel button {
+button {
     background-color: white;
     border: 1px solid gray;
     font-family: monospace;
@@ -59,11 +59,11 @@
     border-radius: 12px;
 }
 
-.option-panel button:hover,
-.option-panel button:focus {
+.on-click {
     background-color: black;
     border: none;
     color: white;
+
 }
 
 .grid {

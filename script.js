@@ -4,11 +4,14 @@ let range_picker = document.querySelector('#range-select');
 let color_btn = document.querySelector('.color-mode');
 let rainbow_btn = document.querySelector('.rainbow-mode');
 
+// default selection of black color & color-mode option
+color_btn.classList.add("on-click");
+console.log(typeof (color_picker.value));
+
 
 range_picker.addEventListener('input', updateGrid);
 
 function updateGrid(e) {
-    console.log(e);
     let gridSize;
     if (e) {
         gridSize = e.target.value;
