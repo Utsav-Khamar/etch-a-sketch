@@ -6,7 +6,11 @@ let rainbow_btn = document.querySelector('.rainbow-mode');
 
 // default selection of black color & color-mode option
 color_btn.classList.add("on-click");
-console.log(typeof (color_picker.value));
+
+let default_color = color_picker.value;
+color_picker.addEventListener('input', (e) => {
+    default_color = color_picker.value;
+})
 
 
 range_picker.addEventListener('input', updateGrid);
@@ -46,11 +50,25 @@ grid.addEventListener("mouseup", function (e) {
 });
 
 function mouseMove(e) {
-    e.target.style.backgroundColor = `rgb(${random(255)},${random(255)},${random(255)})`;
+    if (color_btn.classList.contains("on-click")) {
+        e.target.style.backgroundColor = default_color;
+    }
+    else {
+        e.target.style.backgroundColor = `rgb(${random(255)},${random(255)},${random(255)})`;
+    }
 }
 
 function random(num) {
     return Math.floor(Math.random() * (num + 1));
 }
 
+color_btn.addEventListener('click', () => {
+    color_btn.classList.add('on-click');
+    rainbow_btn.classList.remove('on-click');
+})
+
+rainbow_btn.addEventListener('click', () => {
+    color_btn.classList.remove('on-click');
+    rainbow_btn.classList.add('on-click');
+})
 updateGrid();
