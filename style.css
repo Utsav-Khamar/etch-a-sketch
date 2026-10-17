@@ -72,6 +72,7 @@
     width: calc(min(100vh, 100vw) * 0.8);
     height: calc(min(100vh, 100vw) * 0.8);
     border: 1px solid black;
+    background-color: antiquewhite;
 }
 
 .row {
