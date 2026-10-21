@@ -27,19 +27,25 @@ h1 {
 .display {
     height: 85vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 10em;
 
-    background-color: beige;
+    background-color: whitesmoke;
 }
 
 .option-panel {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 8em;
+
+    height: calc(min(100vh, 100vw) * 0.7);
+    padding: 0 5em;
+    background-color: #ebebd3;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #color-select {
@@ -88,7 +94,8 @@ button {
     width: calc(min(100vh, 100vw) * 0.8);
     height: calc(min(100vh, 100vw) * 0.8);
     border: 1px solid #cccccc !important;
-    background-color: whitesmoke;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .row {
@@ -98,7 +105,7 @@ button {
 
 .col {
     flex: 1;
-    background-color: whitesmoke;
+    background-color: white;
     border-right: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
 }
