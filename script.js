@@ -52,9 +52,15 @@ grid.addEventListener("mouseup", function (e) {
 function mouseMove(e) {
     if (color_btn.classList.contains("on-click")) {
         e.target.style.backgroundColor = default_color;
+        e.target.style.borderRight = `1px solid ${default_color}`;
+        e.target.style.borderBottom = `1px solid ${default_color}`;
     }
     else {
-        e.target.style.backgroundColor = `rgb(${random(255)},${random(255)},${random(255)})`;
+        let color = `rgb(${random(255)},${random(255)},${random(255)})`;
+        e.target.style.backgroundColor = color;
+        e.target.style.borderRight = `1px solid ${color}`;
+        e.target.style.borderBottom = `1px solid ${color}`;
+
     }
 }
 

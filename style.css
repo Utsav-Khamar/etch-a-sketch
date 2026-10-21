@@ -87,8 +87,8 @@ button {
     flex-direction: column;
     width: calc(min(100vh, 100vw) * 0.8);
     height: calc(min(100vh, 100vw) * 0.8);
-    border: 1px solid black;
-    background-color: antiquewhite;
+    border: 1px solid #cccccc !important;
+    background-color: whitesmoke;
 }
 
 .row {
@@ -98,17 +98,17 @@ button {
 
 .col {
     flex: 1;
-    background-color: antiquewhite;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    background-color: whitesmoke;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
 }
 
 .row:last-child .col {
-    border-bottom: none;
+    border-bottom: none !important;
 }
 
 .col:last-child {
-    border-right: none;
+    border-right: none !important;
 }
 
 /* .col:hover {
