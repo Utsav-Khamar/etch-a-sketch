@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Delius&family=Send+Flowers&display=swap');
+
 /* Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -10,11 +12,25 @@
     margin: 0;
 }
 
+.heading {
+    height: 10vh;
+    padding-top: 3vh;
+    background-color: tan;
+}
+
+h1 {
+    font-family: "Send Flowers", cursive;
+    font-size: 6vh;
+    text-align: center;
+}
+
 .display {
-    height: 80vh;
+    height: 85vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    background-color: beige;
 }
 
 .option-panel {
@@ -104,4 +120,21 @@ input {
     /* appearance: none;
     background: none; */
     cursor: pointer;
+}
+
+footer {
+    background-color: whitesmoke;
+    height: 5vh;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    font-family: monospace;
+    font-size: 2vh;
+    font-weight: 900;
 }
