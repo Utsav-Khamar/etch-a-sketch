@@ -42,6 +42,29 @@ updateColorPalette();
 
 let buttons = document.querySelectorAll('.color');
 for (let button of buttons) {
-    button.addEventListener('click', updateGrid);
+    button.addEventListener('click', (e1) => {
+        updateGrid(e1);
+
+        grid.addEventListener("mousedown", function (e2) {
+            mouseMove(e2, e1);
+            grid.onmouseover = function (e2) {
+                mouseMove(e2, e1);
+            }
+        });
+
+        grid.addEventListener("mouseup", function (e2) {
+            grid.onmouseover = null;
+        });
+    });
 }
+
+function mouseMove(e2, e1) {
+    if (e2.target.textContent) {
+        e2.target.style.backgroundColor = `${COLORS[+(e1.target.id)]}`;
+        e2.target.style.borderRight = `1px solid ${COLORS[+(e1.target.id)]}`;
+        e2.target.style.borderBottom = `1px solid ${COLORS[+(e1.target.id)]}`;
+    }
+}
+
+
 
