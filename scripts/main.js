@@ -20,12 +20,13 @@ function updateGrid() {
 }
 
 function updateColorPalette() {
-    for (const color of COLORS) {
+    COLORS.forEach((color, index) => {
         let btn = document.createElement('button');
         btn.style.backgroundColor = color;
         btn.classList.add('color');
+        btn.classList.add(`${index}`);
         color_palette.appendChild(btn);
-    }
+    });
 }
 updateGrid();
 updateColorPalette();
