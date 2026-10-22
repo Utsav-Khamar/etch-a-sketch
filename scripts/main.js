@@ -2,26 +2,32 @@ let grid = document.querySelector('.grid');
 let color_palette = document.querySelector('.color-palette');
 
 function updateGrid(event = null) {
-    grid.textContent = '';
     for (let row = 0; row < MAP.length; row++) {
-        let count = 0;
+        for (let col = 0; col < MAP.length; col++) {
+            if (event) {
+                let block = document.querySelector(`#ROW${row}COL${col}`);
+                if (MAP[row][col] == event.target.id) {
+                    block.textContent = event.target.id;
+                }
+                else {
+                    block.textContent = '';
+                }
+            }
+        }
+    }
+}
+
+
+function createGrid() {
+    for (let row = 0; row < MAP.length; row++) {
         let rows = document.createElement('div');
         rows.classList.add('row');
         for (let col = 0; col < MAP.length; col++) {
-            count++;
             let block = document.createElement('div');
             block.classList.add('col');
-            if (event) {
-                block.textContent = ``;
-                if (MAP[row][col] == event.target.id) {
-                    block.textContent = `${MAP[row][col]}`;
-                }
-            }
-            else {
-                block.textContent = `${MAP[row][col]}`;
-            }
+            block.id = `ROW${row}COL${col}`;
+            block.textContent = `${MAP[row][col]}`;
 
-            // block.style.backgroundColor = `${COLORS[MAP[row][col]]}`;
             rows.appendChild(block)
         }
         grid.appendChild(rows);
@@ -37,7 +43,7 @@ function updateColorPalette() {
         color_palette.appendChild(btn);
     });
 }
-updateGrid();
+createGrid();
 updateColorPalette();
 
 let buttons = document.querySelectorAll('.color');
@@ -63,6 +69,7 @@ function mouseMove(e2, e1) {
         e2.target.style.backgroundColor = `${COLORS[+(e1.target.id)]}`;
         e2.target.style.borderRight = `1px solid ${COLORS[+(e1.target.id)]}`;
         e2.target.style.borderBottom = `1px solid ${COLORS[+(e1.target.id)]}`;
+        e2.target.textContent = '';
     }
 }
 
