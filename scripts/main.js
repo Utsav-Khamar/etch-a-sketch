@@ -12,7 +12,7 @@ function updateGrid() {
             let block = document.createElement('div');
             block.classList.add('col');
             block.textContent = `${MAP[row][col]}`;
-            block.style.backgroundColor = `${COLORS[MAP[row][col]]}`;
+            // block.style.backgroundColor = `${COLORS[MAP[row][col]]}`;
             rows.appendChild(block)
         }
         grid.appendChild(rows);
