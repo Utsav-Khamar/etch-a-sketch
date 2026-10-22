@@ -13,7 +13,6 @@
     flex-direction: column;
     width: calc(min(100vh, 100vw) * 0.8);
     height: calc(min(100vh, 100vw) * 0.8);
-    border: 1px solid #cccccc !important;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
