@@ -1,4 +1,5 @@
 let grid = document.querySelector('.grid');
+let color_palette = document.querySelector('.color-palette');
 
 function updateGrid() {
     for (let row = 0; row < MAP.length; row++) {
@@ -18,4 +19,14 @@ function updateGrid() {
     }
 }
 
+function updateColorPalette() {
+    for (const color of COLORS) {
+        let btn = document.createElement('button');
+        btn.style.backgroundColor = color;
+        btn.classList.add('color');
+        color_palette.appendChild(btn);
+    }
+}
 updateGrid();
+updateColorPalette();
+
