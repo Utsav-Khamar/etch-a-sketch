@@ -46,30 +46,39 @@ function updateColorPalette() {
 createGrid();
 updateColorPalette();
 
+
+let selectedColorID = null;
+let mouseDown = false;
+
 let buttons = document.querySelectorAll('.color');
 for (let button of buttons) {
-    button.addEventListener('click', (e1) => {
-        updateGrid(e1);
-
-        grid.addEventListener("mousedown", function (e2) {
-            mouseMove(e2, e1);
-            grid.onmouseover = function (e2) {
-                mouseMove(e2, e1);
-            }
-        });
-
-        grid.addEventListener("mouseup", function (e2) {
-            grid.onmouseover = null;
-        });
-    });
+    button.addEventListener('click', (e) => {
+        updateGrid(e);
+        selectedColorID = +(e.target.id);
+    })
 }
 
-function mouseMove(e2, e1) {
-    if (e2.target.textContent) {
-        e2.target.style.backgroundColor = `${COLORS[+(e1.target.id)]}`;
-        e2.target.style.borderRight = `1px solid ${COLORS[+(e1.target.id)]}`;
-        e2.target.style.borderBottom = `1px solid ${COLORS[+(e1.target.id)]}`;
-        e2.target.textContent = '';
+grid.addEventListener('mousedown', (e) => {
+    mouseDown = true;
+    mouseMove(e);
+})
+
+grid.addEventListener('mouseover', (e) => {
+    if (mouseDown) {
+        mouseMove(e);
+    }
+})
+
+document.addEventListener('mouseup', () => {
+    mouseDown = false;
+})
+
+function mouseMove(e) {
+    if (e.target.textContent) {
+        e.target.style.backgroundColor = `${COLORS[selectedColorID]}`;
+        e.target.style.borderRight = `1px solid ${COLORS[selectedColorID]}`;
+        e.target.style.borderBottom = `1px solid ${COLORS[selectedColorID]}`;
+        e.target.textContent = '';
     }
 }
 
