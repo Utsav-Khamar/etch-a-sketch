@@ -7,7 +7,12 @@ function updateGrid(event = null) {
             if (event) {
                 let block = document.querySelector(`#ROW${row}COL${col}`);
                 if (MAP[row][col] == event.target.id) {
-                    block.textContent = event.target.id;
+                    if (!(block.classList.contains('is-colored'))) {
+                        block.textContent = event.target.id;
+                    }
+                    else {
+                        block.textContent = '';
+                    }
                 }
                 else {
                     block.textContent = '';
@@ -79,8 +84,6 @@ function mouseMove(e) {
         e.target.style.borderRight = `1px solid ${COLORS[selectedColorID]}`;
         e.target.style.borderBottom = `1px solid ${COLORS[selectedColorID]}`;
         e.target.textContent = '';
+        e.target.classList.add('is-colored');
     }
 }
-
-
-
