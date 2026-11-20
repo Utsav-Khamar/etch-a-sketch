@@ -59,7 +59,7 @@ let buttons = document.querySelectorAll('.color');
 for (let button of buttons) {
     button.addEventListener('click', (e) => {
         updateGrid(e);
-        selectedColorID = +(e.target.id);
+        selectedColorID = e.target.id;
     })
 }
 
@@ -79,10 +79,10 @@ document.addEventListener('mouseup', () => {
 })
 
 function mouseMove(e) {
-    if (e.target.textContent) {
-        e.target.style.backgroundColor = `${COLORS[selectedColorID]}`;
-        e.target.style.borderRight = `1px solid ${COLORS[selectedColorID]}`;
-        e.target.style.borderBottom = `1px solid ${COLORS[selectedColorID]}`;
+    if (e.target.textContent && selectedColorID) {
+        e.target.style.backgroundColor = `${COLORS[+selectedColorID]}`;
+        e.target.style.borderRight = `1px solid ${COLORS[+selectedColorID]}`;
+        e.target.style.borderBottom = `1px solid ${COLORS[+selectedColorID]}`;
         e.target.textContent = '';
         e.target.classList.add('is-colored');
     }
