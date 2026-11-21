@@ -43,15 +43,17 @@ h1 {
 .grid {
     display: flex;
     flex-direction: column;
-    /* width: calc(min(100svh, 100svw) * 1);
-    height: calc(min(100svh, 100svw) * 1); */
-    width: min(100%, 80svh);
-    aspect-ratio: 1 / 1;
 
+    width: min(100%, 80svh);
     max-height: 100%;
     max-width: 100%;
+    aspect-ratio: 1 / 1;
+
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    cursor: pointer;
+    touch-action: none;
 }
 
 .row {
@@ -109,14 +111,11 @@ h1 {
     border: none;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-
+    cursor: pointer;
 }
 
 .no-select {
-    cursor: pointer;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     user-select: none;
-    touch-action: none;
 }
