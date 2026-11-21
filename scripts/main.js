@@ -22,7 +22,6 @@ function updateGrid(event = null) {
     }
 }
 
-
 function createGrid() {
     for (let row = 0; row < MAP.length; row++) {
         let rows = document.createElement('div');
@@ -58,35 +57,42 @@ let mouseDown = false;
 let buttons = document.querySelectorAll('.color');
 for (let button of buttons) {
     button.addEventListener('click', (e) => {
-        updateGrid(e);
         selectedColorID = e.target.id;
+        updateGrid(e);
     })
 }
 
 grid.addEventListener('pointerdown', (e) => {
-    e.preventDefault();
     mouseDown = true;
     mouseMove(e);
 })
 
-grid.addEventListener('pointerover', (e) => {
-
+grid.addEventListener('pointermove', (e) => {
     if (mouseDown) {
-        e.preventDefault();
         mouseMove(e);
     }
-})
+});
 
 document.addEventListener('pointerup', () => {
     mouseDown = false;
 })
 
 function mouseMove(e) {
-    if (e.target.textContent && selectedColorID) {
-        e.target.style.backgroundColor = `${COLORS[+selectedColorID]}`;
-        e.target.style.borderRight = `1px solid ${COLORS[+selectedColorID]}`;
-        e.target.style.borderBottom = `1px solid ${COLORS[+selectedColorID]}`;
-        e.target.textContent = '';
-        e.target.classList.add('is-colored');
+
+    let block = document.elementFromPoint(e.clientX, e.clientY);
+
+    if (
+        block &&
+        block.classList.contains('col') &&
+        block.textContent === selectedColorID &&
+        selectedColorID !== null
+    ) {
+
+        block.style.backgroundColor = `${COLORS[+selectedColorID]}`;
+        block.style.borderRight = `1px solid ${COLORS[+selectedColorID]}`;
+        block.style.borderBottom = `1px solid ${COLORS[+selectedColorID]}`;
+        block.textContent = '';
+        block.classList.add('is-colored');
+
     }
 }
