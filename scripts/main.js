@@ -63,18 +63,21 @@ for (let button of buttons) {
     })
 }
 
-grid.addEventListener('mousedown', (e) => {
+grid.addEventListener('pointerdown', (e) => {
+    e.preventDefault();
     mouseDown = true;
     mouseMove(e);
 })
 
-grid.addEventListener('mouseover', (e) => {
+grid.addEventListener('pointerover', (e) => {
+
     if (mouseDown) {
+        e.preventDefault();
         mouseMove(e);
     }
 })
 
-document.addEventListener('mouseup', () => {
+document.addEventListener('pointerup', () => {
     mouseDown = false;
 })
 
