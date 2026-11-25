@@ -181,6 +181,25 @@ h2 {
     background-color: #9971d9;
 
     flex-shrink: 0;
-    align-self: flex-start;
+    align-self: center;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button>img {
+    width: 60%;
+    height: auto;
+}
+
+.drawing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drawing>img {
+    height: 80%;
+    width: auto;
 }
