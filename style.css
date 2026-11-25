@@ -131,6 +131,10 @@ h2 {
     border-radius: 20px;
     padding: 12px;
     margin-top: 4%;
+
+    text-decoration: none;
+    color: inherit;
+
 }
 
 .drawing {
@@ -170,6 +174,7 @@ h2 {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
 }
