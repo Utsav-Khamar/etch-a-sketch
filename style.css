@@ -135,6 +135,7 @@ h2 {
     text-decoration: none;
     color: inherit;
 
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .drawing {
@@ -207,4 +208,15 @@ h2 {
 .drawing>img {
     height: 80%;
     width: auto;
+}
+
+
+.tile {
+    transition: transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
