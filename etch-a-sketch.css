@@ -16,6 +16,7 @@ body {
     margin: 0;
     background-color: #fffaf2;
     padding-bottom: 8svh;
+    height: 100svh;
 }
 
 .heading {
@@ -60,8 +61,8 @@ body {
 }
 
 .sub-heading {
-    width: 70%;
-    max-width: 768px;
+    width: 80%;
+    max-width: 568px;
     margin-inline: auto;
     container-type: inline-size;
 
@@ -77,7 +78,7 @@ body {
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
-    font-size: 150%;
+    font-size: 4cqw;
 }
 
 .display {
